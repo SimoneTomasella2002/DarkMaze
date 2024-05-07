@@ -1,5 +1,6 @@
 extends Control
 
+@onready var start_game_button: Button = $MarginContainer/VBoxContainer/ButtonsVBox/StartGameButton
 @onready var buttons_v_box: VBoxContainer = $MarginContainer/VBoxContainer/ButtonsVBox
 signal start_game()
 
@@ -14,7 +15,8 @@ func _on_exit_game_button_pressed() -> void:
 	get_tree().quit()
 
 func focus_button() -> void:
-	if buttons_v_box:
-		var button: Button = buttons_v_box.get_child(0)
-		if button is Button:
-			button.grab_focus()
+	start_game_button.grab_focus()
+	#if buttons_v_box:
+	#	var button: Button = buttons_v_box.get_child(0)
+	#	if button is Button:
+	#		button.grab_focus()
