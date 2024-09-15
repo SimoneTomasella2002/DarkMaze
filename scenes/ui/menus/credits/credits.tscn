@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0i46jpvfgm1o"]
+
+[ext_resource type="Theme" uid="uid://bwp1qjsfax8si" path="res://assets/themes/gameBoyTheme.tres" id="1_5pjpn"]
+[ext_resource type="Script" path="res://scenes/ui/menus/credits/credits.gd" id="1_tb8h1"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 960.0
+color = Color(0.0666667, 0.0862745, 0.121569, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 113.0
+offset_right = 1126.0
+offset_bottom = 851.0
+theme = ExtResource("1_5pjpn")
+text = "Godot è bello
+Ma soprattutto le palle di yuri sono fantastiche"
+script = ExtResource("1_tb8h1")

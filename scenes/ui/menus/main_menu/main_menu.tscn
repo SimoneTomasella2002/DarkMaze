@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwxhsa4gp382k"]
 
 [ext_resource type="Theme" uid="uid://bwp1qjsfax8si" path="res://assets/themes/gameBoyTheme.tres" id="1_ta3j0"]
-[ext_resource type="Script" path="res://scenes/ui/menus/main_menu.gd" id="2_8m823"]
+[ext_resource type="Script" path="res://scenes/ui/menus/main_menu/main_menu.gd" id="2_8m823"]
 [ext_resource type="AudioStream" uid="uid://dib76hhiwt7js" path="res://assets/music/xDeviruchi - Mysterious Dungeon.wav" id="3_4ky8x"]
 
 [node name="MainMenu" type="Control"]
@@ -57,11 +57,11 @@ size_flags_vertical = 10
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_bottom = NodePath("../Credits")
-focus_next = NodePath("../Credits")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
 text = "Start Game"
 
-[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -84,5 +84,5 @@ volume_db = -24.36
 autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/Credits" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitButton" to="." method="_on_exit_game_button_pressed"]
