@@ -6,8 +6,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("menu"):
-		get_tree().change_scene_to_file("res://scenes/ui/menus/main_menu/main_menu.tscn")
-
+		FadeTransition.load_scene("res://scenes/ui/menus/main_menu/main_menu.tscn")
 
 func scroll_text(input_text:String) -> void:
 	visible_characters = 0

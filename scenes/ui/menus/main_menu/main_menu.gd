@@ -15,10 +15,10 @@ func _input(event: InputEvent) -> void:
 
 func _on_start_game_button_pressed() -> void:
 	start_game.emit()
-	hide()
+	FadeTransition.load_scene("res://scenes/levels/level1.tscn")
 
 func _on_credits_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/menus/credits/credits.tscn")
+	FadeTransition.load_scene("res://scenes/ui/menus/credits/credits.tscn")
 
 func _on_exit_game_button_pressed() -> void:
 	get_tree().quit()
