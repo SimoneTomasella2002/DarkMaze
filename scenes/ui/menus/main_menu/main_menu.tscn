@@ -45,7 +45,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
-text = "Dark Labyrinth"
+text = "Dark Maze"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -57,9 +57,17 @@ size_flags_vertical = 10
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../Debug RoomButton")
+focus_next = NodePath("../Debug RoomButton")
+text = "Start Game"
+
+[node name="Debug RoomButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../CreditsButton")
 focus_next = NodePath("../CreditsButton")
-text = "Start Game"
+text = "Debug Room"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
 layout_mode = 2
@@ -84,5 +92,6 @@ volume_db = -24.36
 autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/Debug RoomButton" to="." method="_on_debug_room_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitButton" to="." method="_on_exit_game_button_pressed"]

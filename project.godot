@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Dark Labyrinth"
+config/name="Dark Maze"
 run/main_scene="res://scenes/ui/menus/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -72,3 +72,7 @@ menu={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.103744, 0.103744, 0.103744, 1)
