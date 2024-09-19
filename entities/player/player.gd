@@ -12,7 +12,7 @@ var velocity: Vector2.ZERO
 
 func _process(delta: float) -> void:
 	var playerInput = get_input()
-	// velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
+	# velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
 
 	if playerInput != Vector2.ZERO:
 		velocity = velocity.move_toward(playerInput * SPEED, ACCEL * delta)
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		
 	velocity = move_and_slide(velocity)
 
-	// move_and_slide()
+	# move_and_slide()
 
 
 # Custom functions
