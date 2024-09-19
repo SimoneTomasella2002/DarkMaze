@@ -37,8 +37,18 @@ Good luck finding the treasure."
 script = ExtResource("2_34xlq")
 
 [node name="StartPromptText" type="RichTextLabel" parent="ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_top = -203.0
+offset_right = 157.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_maqgv")
 text = "Press \"start\" to play"
 script = ExtResource("3_47ucu")
