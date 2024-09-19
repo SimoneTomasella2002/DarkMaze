@@ -15,7 +15,7 @@ func _input(_event: InputEvent) -> void:
 
 func _on_start_game_button_pressed() -> void:
 	start_game.emit()
-	FadeTransition.load_scene("res://scenes/levels/level1.tscn")
+	FadeTransition.load_scene("res://scenes/movies/intro.tscn")
 
 func _on_debug_room_button_pressed() -> void:
 	FadeTransition.load_scene("res://scenes/levels/debug_room.tscn")

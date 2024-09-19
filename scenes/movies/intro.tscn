@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmoulto2tgor2"]
+
+[ext_resource type="Theme" uid="uid://bwp1qjsfax8si" path="res://assets/themes/gameBoyTheme.tres" id="1_maqgv"]
+[ext_resource type="Script" path="res://scenes/movies/intro_text.gd" id="2_34xlq"]
+[ext_resource type="Script" path="res://scenes/movies/start_prompt_text.gd" id="3_47ucu"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0862745, 0.121569, 1)
+
+[node name="IntroText" type="RichTextLabel" parent="ColorRect"]
+offset_left = 162.0
+offset_top = 113.0
+offset_right = 1126.0
+offset_bottom = 305.0
+theme = ExtResource("1_maqgv")
+text = "Welcome adventurer
+
+Today you'll make the history of all the adventurers in the world
+
+You found a big temple to explore, and at the end there lies the biggest treasure known to mankind, even though many consider it as a legend.
+
+Good luck finding the treasure."
+script = ExtResource("2_34xlq")
+
+[node name="StartPromptText" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Press \"start\" to play"
+script = ExtResource("3_47ucu")
