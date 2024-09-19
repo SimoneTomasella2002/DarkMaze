@@ -9,7 +9,7 @@ var velocity: Vector2 = Vector2.ZERO
 
 # Default functions
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var playerInput = get_input()
 	# velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
 
@@ -29,4 +29,6 @@ func get_input() -> Vector2:
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	
-	return input.normalized()
+	if input != Vector2.ZERO:
+		return input.normalized()
+	return Vector2.ZERO
