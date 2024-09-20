@@ -5,22 +5,14 @@ const SPEED = 300.0
 const ACCEL = 2.0
 const FRICTION = 100.0
 
-var velocity: Vector2 = Vector2.ZERO
-
 # Default functions
 
+# Beta version of movements, must be improved on
 func _physics_process(delta: float) -> void:
 	var playerInput = get_input()
-	# velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
-
-	# Se c'è input del giocatore, muoviti verso il nuovo valore di velocità
-	if playerInput != Vector2.ZERO:
-		velocity = velocity.move_toward(playerInput * SPEED, ACCEL * delta)
-	else:
-		# Se non c'è input, applica attrito
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-		
-	velocity = move_and_slide(velocity)
+	velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
+	
+	move_and_slide()
 
 # Custom functions
 
