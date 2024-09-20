@@ -1,16 +1,20 @@
 extends CharacterBody2D
 
 # Const and variables
-const SPEED = 300.0
+const SPEED = 250.0
 const ACCEL = 2.0
-const FRICTION = 100.0
+const FRICTION = 0.1
 
 # Default functions
 
 # Beta version of movements, must be improved on
 func _physics_process(delta: float) -> void:
 	var playerInput = get_input()
-	velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
+	
+	if (playerInput.length() > 0):
+		velocity = velocity.lerp(playerInput * SPEED, delta * ACCEL)
+	else:
+		velocity = velocity.lerp(Vector2.ZERO, FRICTION)
 	
 	move_and_slide()
 
