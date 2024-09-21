@@ -55,7 +55,7 @@ offset_right = 1280.0
 offset_bottom = 960.0
 color = Color(0.0666667, 0.0862745, 0.121569, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background"]
+[node name="CreditsText" type="RichTextLabel" parent="Background"]
 layout_mode = 0
 offset_left = 162.0
 offset_top = 113.0
@@ -68,14 +68,14 @@ Music used:
 	- xDeviruchi - Mysterious Dungeon
 
 Assets used:
-	-
+	- Canaripack 1BIT Topdown, by Johan Vinet - Canary Games
 
 Font used:
 	-
 
 Mit license used, look at more information about it on the github page"
 
-[node name="pressStartLabel" type="RichTextLabel" parent="Background"]
+[node name="StartPromptText" type="RichTextLabel" parent="Background"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -91,7 +91,7 @@ grow_vertical = 0
 theme = ExtResource("1_5pjpn")
 text = "Press \"enter\" to exit credits"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/pressStartLabel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/StartPromptText"]
 libraries = {
 "": SubResource("AnimationLibrary_5bn3e")
 }
