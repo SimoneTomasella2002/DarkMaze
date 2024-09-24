@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi46timmgftbw"
-path="res://.godot/imported/PixelPackTOPDOWN1BIT.png-fe98f191edabff4d062d6fdc871c5d53.ctex"
+uid="uid://stmcq12nhhs1"
+path="res://.godot/imported/HEROS1bit_Adventurer Hurt U.png-758cf3028b9fac38099633a427900c74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/PixelPackTOPDOWN1BIT.png"
-dest_files=["res://.godot/imported/PixelPackTOPDOWN1BIT.png-fe98f191edabff4d062d6fdc871c5d53.ctex"]
+source_file="res://assets/sprites/player/HEROS1bit_Adventurer Hurt U.png"
+dest_files=["res://.godot/imported/HEROS1bit_Adventurer Hurt U.png-758cf3028b9fac38099633a427900c74.ctex"]
 
 [params]
 
