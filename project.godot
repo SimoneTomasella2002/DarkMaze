@@ -18,11 +18,20 @@ config/icon="res://icon.svg"
 [autoload]
 
 FadeTransition="*res://scenes/transitions/fade_transition.tscn"
+GameManager="*res://scenes/levels/game_manager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=960
+
+[dotnet]
+
+project/assembly_name="Dark Maze"
+
+[global_group]
+
+levels=""
 
 [input]
 

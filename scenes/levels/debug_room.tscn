@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c48csjumxpiju" path="res://entities/world/wall/Wall.tscn" id="2_u4pv4"]
 [ext_resource type="TileSet" uid="uid://q2f6tbqvi6xj" path="res://scenes/levels/debug_room.tres" id="3_7tmcr"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" groups=["levels"]]
 
 [node name="Player" parent="." instance=ExtResource("1_jtlxx")]
 
