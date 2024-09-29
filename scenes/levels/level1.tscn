@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://dv43nxfuru8iq"]
 
 [node name="Level1" type="Node2D" groups=["levels"]]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Bella"

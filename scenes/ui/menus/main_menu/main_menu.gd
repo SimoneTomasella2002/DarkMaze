@@ -18,7 +18,7 @@ func _on_start_game_button_pressed() -> void:
 	FadeTransition.load_scene("res://scenes/movies/intro.tscn")
 
 func _on_debug_room_button_pressed() -> void:
-	FadeTransition.load_scene("res://scenes/levels/debug_room.tscn")
+	FadeTransition.load_scene("res://scenes/levels/debug_room0.tscn")
 
 func _on_credits_button_pressed() -> void:
 	FadeTransition.load_scene("res://scenes/ui/menus/credits/credits.tscn")

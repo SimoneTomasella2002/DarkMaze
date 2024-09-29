@@ -32,6 +32,7 @@ project/assembly_name="Dark Maze"
 [global_group]
 
 levels=""
+Player=""
 
 [input]
 

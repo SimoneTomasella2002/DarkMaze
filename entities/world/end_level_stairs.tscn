@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuayuhm0bxvrk"]
+
+[ext_resource type="Texture2D" uid="uid://bi46timmgftbw" path="res://assets/tilesets/PixelPackTOPDOWN1BIT.png" id="1_aac77"]
+[ext_resource type="Script" path="res://entities/world/end_level_stairs.gd" id="1_r7pew"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1t40"]
+atlas = ExtResource("1_aac77")
+region = Rect2(144, 176, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0r6l6"]
+size = Vector2(16, 16)
+
+[node name="EndLevelStairs" type="Area2D"]
+script = ExtResource("1_r7pew")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = SubResource("AtlasTexture_e1t40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_0r6l6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
