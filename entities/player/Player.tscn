@@ -24,7 +24,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrpvg"]
-size = Vector2(16, 16)
+size = Vector2(14, 15)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
@@ -36,6 +36,8 @@ sprite_frames = SubResource("SpriteFrames_icnc4")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_vrpvg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
