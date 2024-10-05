@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf33v307ndbio"]
+
+[ext_resource type="Texture2D" uid="uid://bi46timmgftbw" path="res://assets/tilesets/PixelPackTOPDOWN1BIT.png" id="1_nhrnn"]
+[ext_resource type="Script" path="res://entities/world/torches/wall_torch.gd" id="1_qjn45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho5y5"]
+atlas = ExtResource("1_nhrnn")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cto8a"]
+atlas = ExtResource("1_nhrnn")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtj48"]
+atlas = ExtResource("1_nhrnn")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o06l"]
+atlas = ExtResource("1_nhrnn")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ec4kq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho5y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cto8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtj48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o06l")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 1.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6100"]
+size = Vector2(16, 16)
+
+[node name="UpFacingTorch" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_qjn45")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ec4kq")
+animation = &"lit"
+frame_progress = 0.0804548
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l6100")

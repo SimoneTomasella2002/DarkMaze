@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuayuhm0bxvrk"]
 
 [ext_resource type="Texture2D" uid="uid://bi46timmgftbw" path="res://assets/tilesets/PixelPackTOPDOWN1BIT.png" id="1_aac77"]
-[ext_resource type="Script" path="res://entities/world/end_level_stairs.gd" id="1_r7pew"]
+[ext_resource type="Script" path="res://entities/world/stairs/end_level_stairs.gd" id="1_r7pew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1t40"]
 atlas = ExtResource("1_aac77")

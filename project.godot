@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 FadeTransition="*res://scenes/transitions/fade_transition.tscn"
-GameManager="*res://scenes/levels/game_manager.gd"
+GameManager="*res://scenes/levels/scripts/game_manager.gd"
 
 [display]
 
@@ -33,6 +33,7 @@ project/assembly_name="Dark Maze"
 
 levels=""
 Player=""
+light=""
 
 [input]
 

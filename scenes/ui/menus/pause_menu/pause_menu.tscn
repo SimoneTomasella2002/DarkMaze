@@ -10,6 +10,8 @@ default_font = ExtResource("1_qtfik")
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
+light_mask = 512
+visibility_layer = 512
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
