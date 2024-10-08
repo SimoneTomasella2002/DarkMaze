@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
+signal player_position
+
 # Const and variables
 const SPEED = 250.0
 const ACCEL = 2.0
@@ -13,6 +15,9 @@ var last_movement: String = "idle_left_right"
 # Default functions
 func _ready():
 	anim.play("idle_left_right")
+	
+func _input(event: InputEvent) -> void:
+	GameManager.menu_opened.connect(_on_pause_menu_opened)
 
 # Beta version of movements, must be improved on
 func _physics_process(delta: float) -> void:
@@ -60,3 +65,7 @@ func playAnimation(playerInput: Vector2):
 		else:
 			anim.play("walking_down")
 			last_movement = "walking_down"
+
+func _on_pause_menu_opened():
+	var playerPos: Vector2 = self.get_global_position()
+	player_position.emit(playerPos)

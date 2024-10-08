@@ -1,5 +1,7 @@
 extends Node
 
+signal menu_opened
+
 var pause_menu = load("res://scenes/ui/menus/pause_menu/pause_menu.tscn")
 var _pause_scene = null
 
@@ -7,6 +9,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		var scene_path = get_tree().get_first_node_in_group("levels")
 		if scene_path != null:
+			menu_opened.emit()
 			_pause_scene = pause_menu.instantiate()
 			_pause_scene.menu_closed.connect(_on_menu_closed)
 			get_tree().root.add_child(_pause_scene)
