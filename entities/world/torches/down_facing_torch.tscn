@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jaf60rylhy0o"]
+[gd_scene load_steps=16 format=3 uid="uid://jaf60rylhy0o"]
 
 [ext_resource type="Texture2D" uid="uid://bi46timmgftbw" path="res://assets/tilesets/PixelPackTOPDOWN1BIT.png" id="1_n7dwt"]
 [ext_resource type="Script" path="res://entities/world/torches/wall_torch.gd" id="1_na3bv"]
@@ -58,25 +58,32 @@ size = Vector2(16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lljd1"]
 radius = 24.0
 
-[sub_resource type="Gradient" id="Gradient_riq1g"]
+[sub_resource type="Gradient" id="Gradient_1kjkf"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r1w7o"]
-gradient = SubResource("Gradient_riq1g")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s5u5i"]
+gradient = SubResource("Gradient_1kjkf")
+width = 72
+height = 72
 fill = 1
 fill_from = Vector2(0.518692, 0.471963)
-fill_to = Vector2(0.196262, 0.191589)
+fill_to = Vector2(0.140187, 0.130841)
+
+[sub_resource type="Curve" id="Curve_x3dv7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ncl4f"]
 light_mode = 1
 
-[node name="DownFacingTorch" type="StaticBody2D" node_paths=PackedStringArray("anim", "area", "prompt_text", "light")]
+[node name="DownFacingTorch" type="StaticBody2D" node_paths=PackedStringArray("anim", "area", "prompt_text", "light", "particles")]
 texture_filter = 1
 script = ExtResource("1_na3bv")
 anim = NodePath("AnimatedSprite2D")
 area = NodePath("Area2D")
 prompt_text = NodePath("Label")
 light = NodePath("PointLight2D")
+particles = NodePath("CPUParticles2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_00yil")
@@ -92,7 +99,22 @@ shape = SubResource("CircleShape2D_lljd1")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 3.0
-texture = SubResource("GradientTexture2D_r1w7o")
+texture = SubResource("GradientTexture2D_s5u5i")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 5
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 40.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_x3dv7")
 
 [node name="Label" type="Label" parent="."]
 z_index = 50

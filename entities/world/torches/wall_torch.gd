@@ -6,6 +6,7 @@ class_name Wall_Torch
 @export var area : Area2D
 @export var prompt_text : Label
 @export var light : Light2D
+@export var particles : CPUParticles2D
 
 var enlightened : bool = false
 var is_player_in_area : bool = false
@@ -22,6 +23,7 @@ func _input(_event: InputEvent) -> void:
 			enlightened = true
 			light.visible = true
 			prompt_text.visible = false
+			particles.emitting = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and !enlightened:
