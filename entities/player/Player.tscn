@@ -149,11 +149,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrpvg"]
 size = Vector2(14, 15)
 
-[sub_resource type="Gradient" id="Gradient_3ip7l"]
+[sub_resource type="Gradient" id="Gradient_1u24p"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_epygx"]
-gradient = SubResource("Gradient_3ip7l")
+gradient = SubResource("Gradient_1u24p")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.11, 0.11)

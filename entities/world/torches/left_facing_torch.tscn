@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://0bx1ol22reao"]
+[gd_scene load_steps=15 format=3 uid="uid://0bx1ol22reao"]
 
 [ext_resource type="Texture2D" uid="uid://bi46timmgftbw" path="res://assets/tilesets/PixelPackTOPDOWN1BIT.png" id="1_cq5x0"]
 [ext_resource type="Script" path="res://entities/world/torches/wall_torch.gd" id="1_nstad"]
+[ext_resource type="Theme" uid="uid://bwp1qjsfax8si" path="res://assets/themes/gameBoyTheme.tres" id="3_gtn5u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nns7h"]
 atlas = ExtResource("1_cq5x0")
@@ -18,6 +19,10 @@ region = Rect2(32, 144, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3clf6"]
 atlas = ExtResource("1_cq5x0")
 region = Rect2(48, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mlm0"]
+atlas = ExtResource("1_cq5x0")
+region = Rect2(80, 256, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t4e8d"]
 animations = [{
@@ -37,19 +42,68 @@ animations = [{
 "loop": true,
 "name": &"lit",
 "speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mlm0")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6100"]
 size = Vector2(16, 16)
 
-[node name="LeftFacingTorch" type="StaticBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvnaj"]
+radius = 24.0
+
+[sub_resource type="Gradient" id="Gradient_riq1g"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lrjdh"]
+gradient = SubResource("Gradient_riq1g")
+fill = 1
+fill_from = Vector2(0.518692, 0.471963)
+fill_to = Vector2(0.196262, 0.191589)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pymb1"]
+light_mode = 1
+
+[node name="LeftFacingTorch" type="StaticBody2D" node_paths=PackedStringArray("anim", "area", "prompt_text", "light")]
 texture_filter = 1
 script = ExtResource("1_nstad")
+anim = NodePath("AnimatedSprite2D")
+area = NodePath("Area2D")
+prompt_text = NodePath("Label")
+light = NodePath("PointLight2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t4e8d")
-animation = &"lit"
-frame_progress = 0.675182
+animation = &"unlit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l6100")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bvnaj")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 3.0
+texture = SubResource("GradientTexture2D_lrjdh")
+
+[node name="Label" type="Label" parent="."]
+z_index = 50
+material = SubResource("CanvasItemMaterial_pymb1")
+offset_left = -59.0
+offset_top = -21.0
+offset_right = 61.0
+offset_bottom = -13.0
+theme = ExtResource("3_gtn5u")
+theme_override_font_sizes/font_size = 5
+text = "Press enter to light torch"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
